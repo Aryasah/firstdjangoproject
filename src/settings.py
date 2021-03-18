@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['aryasah17.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts.apps.AppConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
