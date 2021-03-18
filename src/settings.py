@@ -35,13 +35,13 @@ ALLOWED_HOSTS = ['aryasah17.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
 ]
 
 MIDDLEWARE = [
