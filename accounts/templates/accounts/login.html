@@ -1,0 +1,176 @@
+{% extends "accounts/base.html"%}
+
+{% block style %}
+@import url(https://fonts.googleapis.com/css?family=Calligraffitti);
+
+#co {
+  background-image: linear-gradient(135deg, rgba(52, 152, 219,0.5) 0%,rgba(243, 65, 65, 0.4) 100%), url("http://i.imgbox.com/LmWSE419.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+.landing  {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  top: 40%;
+  left:25%;
+  font-size:3rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  transform: translate3d(-50%,-50%,0);
+}
+.landing h1{
+  font-size:4rem;
+}
+
+ 
+.btn1{
+    font-size:1rem;
+    background: #fff;
+    color: #000000;
+} 
+.btn1:hover{
+    background: #00b894;
+    color: #ffffff;
+}  
+.btn2{
+    background: #fff;
+    font-size:1rem;
+    color: #000000;
+}  
+.btn2:hover{
+    background: #00b894;
+    color: #ffffff;
+} 
+animate__animated animate__pulse{
+    animation-duration: 200ms;   
+}
+animate__animated animate__rollIn
+{
+    animation-duration: 2s;
+}
+.change_content:after{
+    content: '';
+    animation: changetext 10s infinite linear;
+    color:#00b894;
+}
+@keyframes changetext{
+  0%{content:"Darjeeling;"}
+  20%{content:"Jaipur;"}  
+  40%{content:"Delhi;"}  
+  60%{content:"Agra;"}  
+  80%{content:"Kolkata;"} 
+  100% {content:"Mumbai;"} 
+}
+
+.landing a{
+    padding: 2px 3px;
+    border-radius: 5px;
+    outline-style: none;
+    font-size: 1.2rem;
+    font-weight: 450;
+    text-decoration: none;
+    letter-spacing: 2px;   
+    transition: all 0.5s ease;
+}
+
+
+@media only screen and (max-width : 768px) {
+
+	.landing {
+  font-size:2rem;
+  left:17%;	
+	}
+    .landing h1{
+  font-size:3rem;
+}
+
+}
+
+animate__animated animate__pulse{
+    animation-duration: 200ms;   
+}
+animate__animated animate__rollIn
+{
+    animation-duration: 2s;
+}
+.change_content:after{
+    content: '';
+    animation: changetext 10s infinite linear;
+    color:#00b894;
+}
+@keyframes changetext{
+  0%{content:"Darjeeling;"}
+  20%{content:"Jaipur;"}  
+  40%{content:"Delhi;"}  
+  60%{content:"Agra;"}  
+  80%{content:"Kolkata;"} 
+  100% {content:"Mumbai;"} 
+}
+
+
+
+
+{% endblock style %}
+
+    {% block content %}
+
+<div class="container-fluid" id="co">
+
+<canvas id="c"></canvas>
+    <span class="animate__animated animate__rollIn landing">Welcome to India 
+    <h1 >Do Visit The Place <span class="change_content"></span></h1>
+    <p >India once is not enough</p><br>
+      <a href="#"class="btn1">Learn more</a>
+    &nbsp;&nbsp;<a href="#"class="btn2">Sign up</a>
+    </span>
+</div>
+
+
+
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Log In to Incredible India</h3>
+            {% if messages %}
+
+            {% for message in messages %}
+            <div class="alert alert-info">
+                {{ message }}
+            </div>
+            {% endfor %}
+      
+        {% endif %}
+            <div class="card-text">
+                <!--
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                <form method="post" >
+                    {% csrf_token %}
+                    <!-- to error: add class "has-danger" -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" name="username" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <a href="#" style="float:right;font-size:12px;">Forgot password?</a>
+                        <input type="password" name="password" class="form-control form-control-sm" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    
+                    <div class="sign-up">
+                        Don't have an account? <a href="{% url 'register_attempt' %}">Create One</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    {% endblock %}

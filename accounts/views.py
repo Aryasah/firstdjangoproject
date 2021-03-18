@@ -6,42 +6,37 @@ from .models import *
 import uuid
 from django.conf import settings
 from django.core.mail import send_mail
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from datetime import datetime
 # Create your views here.
-
-@login_required
-def home(request):
-    return render(request , 'home.html')
 
 
 
 def login_attempt(request):
-    if request.method == 'POST':
+    if request.method=="POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
-
-        user_obj = User.objects.filter(username = username).first()
-        if user_obj is None:
-            messages.success(request, 'User not found.')
-            return redirect('/accounts/login')
         
-        
-        profile_obj = Profile.objects.filter(user = user_obj ).first()
 
-        if not profile_obj.is_verified:
-            messages.success(request, 'Profile is not verified check your mail.')
-            return redirect('/accounts/login')
+        # check if user has entered correct credentials
+        user = authenticate(username=username, password=password)
 
-        user = authenticate(username = username , password = password)
-        if user is None:
-            messages.success(request, 'Wrong password.')
-            return redirect('/accounts/login')
-        
-        login(request , user)
-        return redirect('/')
+        if user is not None:
+            # A backend authenticated the credentials
+            login(request, user)
+            messages.success(request,"Succesful Logged-In")
+            return redirect("/")
 
-    return render(request , 'login.html')
+        else:
+            # No backend authenticated the credentials
+            messages.error(request,"Invalid Credentials ,Please Try Again")
+            return render(request, 'accounts/login.html')
+
+    return render(request, 'accounts/login.html')
+
+
+
 
 def register_attempt(request):
 
@@ -53,11 +48,11 @@ def register_attempt(request):
 
         try:
             if User.objects.filter(username = username).first():
-                messages.success(request, 'Username is taken.')
+                messages.error(request, 'Username is taken.')
                 return redirect('/register')
 
             if User.objects.filter(email = email).first():
-                messages.success(request, 'Email is taken.')
+                messages.error(request, 'Email is taken.')
                 return redirect('/register')
             
             user_obj = User(username = username , email = email)
@@ -73,14 +68,14 @@ def register_attempt(request):
             print(e)
 
 
-    return render(request , 'register.html')
+    return render(request , 'accounts/register.html')
 
 def success(request):
-    return render(request , 'success.html')
+    return render(request , 'accounts/success.html')
 
 
 def token_send(request):
-    return render(request , 'token_send.html')
+    return render(request , 'accounts/token_send.html')
 
 
 
@@ -104,11 +99,36 @@ def verify(request , auth_token):
         return redirect('/')
 
 def error_page(request):
-    return  render(request , 'error.html')
+    return  render(request , 'accounts/error.html')
+
+
+# Create your views here.
+def index(request):
+    if request.user.is_anonymous:
+        return redirect('/accounts/login') 
+    return render(request, 'accounts/home.html')
 
 
 
+def about(request):
+    return render(request, 'accounts/about.html') 
 
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        desc = request.POST.get('desc')
+        contact = Contact(name=name, email=email, phone=phone, desc=desc, date = datetime.today())
+        contact.save()
+        messages.success(request, 'Your message has been sent!')
+    return render(request, 'accounts/contact.html')
+
+def logoutUser(request):
+    logout(request)
+    messages.success(request,"Succesful Logout")
+
+    return redirect("/accounts/login")
 
 
 

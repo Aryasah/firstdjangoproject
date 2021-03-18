@@ -1,0 +1,176 @@
+{% extends "accounts/base.html"%}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+{% endblock head %}
+
+{% block icon %} 
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
+          <div class="dropdown-menu text-center">
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.6rem">WelCome</span> <span style="color:blue;font-size:1.2rem;font-family:'Lora',cursive"><i>{{request.user}}</i></i></span></a>
+              <a class="nav-brand " href='/logout'> <i class="fa fa-sign-out" style="color:red" aria-hidden="true"> Log-Out</i></a>
+          </div>
+      </li>
+      </ul>
+
+{% endblock icon %}
+{% block home %}/{% endblock home %}
+{% block contact %}/contact{% endblock contact %}
+{% block about %}/about{% endblock about %}
+
+ {% block content %}
+ 
+ <div class="container-fluid px-0">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+                <img src="{% static 'img/dallake.jpg' %}" class="d-block w-100" alt="...">
+                
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Heaven Of Earth</h5>
+            <p>Visit The Heaven of Earth, Srinagar </p>
+        </div>
+        </div>
+        <div class="carousel-item">
+              <img src="{% static 'img/sports.jpg' %}" class="d-block w-100" alt="...">
+
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Adventure Sports Of Kerala</h5>
+            <p>Experience Thrilling  modern water sports in the beaches of Kerala</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="{% static 'img/taj.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>The Taj Mahal</h5>
+            <p>One of seven wonders of world, a symbol of love and devotion </p>
+        </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    </div>
+</div>
+
+ <section>
+    <div class="jumbotron jumbotron-fluid text-center mt-1 mb-3"  >
+      <div class="container" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
+        <h1 class="display-4" style="font-family: 'Langar', cursive; font-size:3rem ">India Land of Happiness</h1>
+        <h3 style="text-align: center;">Experience</h3>
+        <h1 style="text-align: center;">The Magnificient India</h1>
+        <p style=" font-family: 'Lora', serif;"><span style=" font-family: 'Cookie', serif; font-size:2rem"><b>India </b></span> is the One land that all men desire to see, and having seen once, by even a glimpse, would not give that glimpse for all the shows of all the rest of the globe combined.<br>~Mark Twain
+        </p>
+      </div>
+    </div>
+    <hr>
+  </section>
+       <section>
+  <div class="container">
+    <div class="card-deck mt-2 mb-2">
+      <div class="card" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <img class="card-img-top " src="{% static 'img/card/lotus.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="dots1">Lotus Temple, New Delhi</h5>
+          <p class="card-text" id="more1">The Lotus Temple, located in Delhi, India, is a Baháʼí House of Worship that was dedicated in December 1986. Notable for its flowerlike shape, it has become a prominent attraction in the city.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" onclick="myFunction1()" id="myBtn1">Know More</button>
+        </div>
+      </div>
+      <div class="card"  data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <img class="card-img-top h-60" src="{% static 'img/card/toytrain.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="dots2">Darjeeling Toy-Train</h5>
+          <p class="card-text" id="more2">The Darjeeling Toy Train, is a prominent crowd-puller in the beautiful hill station of West Bengal with outstanding engineering marvel, noted for being the best example of a hill passenger railway.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary h-60" onclick="myFunction2()" id="myBtn2">Know more</button>
+        </div>
+      </div>
+      <div class="card"  data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <img class="card-img-top h-60" src="https://3.bp.blogspot.com/-IKk-wHY12Vk/V4YjZpgYP1I/AAAAAAAABcE/GpO2zJHSlvUJ0TpR4LbXqux1QhVa7BrPgCLcB/s1600/kerala-tourism-photos2.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="dots3">Snake Boats, Kerala</h5>
+          <p class="card-text" id="more3">Vallam Kulangara - Snake boats Vallam Kali (vaḷḷaṃ kaḷi, literally: boat game) is a traditional boat race in Kerala, India. It is a form of canoe racing, and uses paddled war canoes.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" onclick="myFunction3()" id="myBtn3">Know more</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck mt-2 mb-6">
+      <div class="card"  data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <img class="card-img-top" src="{% static 'img/card/varanasi.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="dots4">Varanasi</h5>
+          <p class="card-text" id="more4">A major religious hub in India, it is the holiest of the seven sacred cities in Hinduism and Jainism, and played an important role in the development of Buddhism and Ravidassia.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" onclick="myFunction4()" id="myBtn4">Know more</button>
+        </div>
+      </div>
+      <div class="card"  data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <img class="card-img-top" src="{% static 'img/card/charminar.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="dots5">CharMinar, Hyderabad</h5>
+          <p class="card-text" id="more5">The Charminar, constructed in 1591, is a monument and mosque located in Hyderabad, Telangana, India has become known globally as a symbol of Hyderabad and is listed among the most recognized structures in India.</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" onclick="myFunction5()" id="myBtn5">Know more</button>
+        </div>
+      </div>
+      <div class="card"  data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+        <img class="card-img-top" src="{% static 'img/card/dallake.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id="dots6">Dal Lake, Srinagar</h5>
+          <p class="card-text" id="more6"> It is integral to tourism and recreation in Kashmir and is named the "Lake of Flowers", "Jewel in the crown of Kashmir" or "Srinagar's Jewel". </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" onclick="myFunction6()" id="myBtn6">Know more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+ 
+ 
+
+
+
+
+
+ {% endblock content %}
+
+
+
+ 

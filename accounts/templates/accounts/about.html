@@ -1,0 +1,160 @@
+{% extends 'accounts/base.html' %}
+
+
+{% block title %}About{% endblock title %}
+
+{% block head %}
+    <link  type ="text/css" href="static/css/about.css" rel="stylesheet">
+{% endblock head %}
+{% block icon %} 
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user"  style="font-size:2rem" aria-hidden="true"></i></a></a>
+          <div class="dropdown-menu text-center">
+              <a class="dropdown-item " href="/contact"><span style="font-family:'Cookie',cursive;font-size:1.6rem">WelCome</span> <span style="color:blue;font-size:1.2rem;font-family:'Lora',cursive"><i>{{request.user}}</i></a>
+              <a class="nav-brand " href='/logout'> <i class="fa fa-sign-out" aria-hidden="true"> Log-Out</i></a>
+          </div>
+      </li>
+      </ul>
+
+{% endblock icon %}
+{% block home %}/{% endblock home %}
+{% block contact %}/contact{% endblock contact %}
+{% block about %}/about{% endblock about %}
+{% block body %}
+
+<section>
+<div class="bg-light">
+  <div class="container py-5">
+    <div class="row h-100 align-items-center py-5">
+      <div class="col-lg-6">
+        <h1 class="display-4">About Us</h1>
+        <p class="lead text-muted mb-0"><span style="font-family: 'Cookie', cursive; font-size:2rem;">Incredible India</span> has been committed to bringing our clients the best in value and quality travel arrangements. We are passionate about travel and sharing the world's wonders on the leisure travel side, and providing corporate travelers hi-touch services to facilitate their business travel needs.</p>
+
+      </div>
+      <div class="col-lg-6 d-none d-lg-block"><img src="https://techkiga.com/wp-content/uploads/2019/01/Tour-Travel-PNG-Elements-1024x707.png" alt="" class="img-fluid"></div>
+    </div>
+  </div>
+</div>
+</section>
+<section>
+<div class="bg-white py-5">
+  <div class="container py-5">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+        <h2 class="font-weight-light">Provide Complete Online Solution</h2>
+        <p class="font-italic text-muted mb-4">You can book your trip anytime and from anywhere as we also provide online booking and virtual visit( <span style="font-weight:bold;">Free of Cost</span>) to facilities before final booking  </p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Book Now</a>
+      </div>
+      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834139/img-1_e25nvh.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+    </div>
+</div>
+</section>
+<section>
+<div class="bg-light py-5">
+  <div class="container py-5">
+    <div class="row mb-4 text-center mx-100">
+      <div class="col-lg-12 ml-30% ">
+        <h2 class="display-4 font-weight-light ">Our team</h2>
+        <p class="font-italic text-muted">We are A team of Enthusiastic people determined to make your trip memorable</p>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834132/avatar-4_ozhrib.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Sanchita Mishra</h5><span class="small text-uppercase text-muted">Cheif Executive Officer</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834130/avatar-3_hzlize.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Rohit Agarwal</h5><span class="small text-uppercase text-muted">Cheif Guide</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-2_f8dowd.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">R. Biswajeeth</h5><span class="small text-uppercase text-muted">Accounts Head</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-2">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Abhisek Prajapati</h5><span class="small text-uppercase text-muted">Managing Director</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+
+    </div>
+  </div>
+</div>
+
+</section>
+
+<section class="mb-3 mt-3">
+<div class="container">
+ <h2 class="display-4 font-weight-light text-center ">Reviews of :) Customers</h2>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption">
+                    <p  style="font-family:'Lora', cursive; ">I had a very memorable trip to Kanyakumari. It was awesome and services provided by <span style="font-family: 'Cookie', cursive; font-size:2rem">Incredible India </span>  was excellent  </p> <img src="https://p7.hiclipart.com/preview/922/81/315/stock-photography-computer-icons-user-3d-character-icon-vector-material.jpg">
+                    <div id="image-caption">Subham Sah</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                  <p  style="font-family:'Lora', cursive; ">I had a very memorable trip to Darjeeling. It was awesome and services provided by <span style="font-family: 'Cookie', cursive; font-size:2rem">Incredible India </span> was excellent  </p>  <img src="https://p7.hiclipart.com/preview/922/81/315/stock-photography-computer-icons-user-3d-character-icon-vector-material.jpg" class="img-fluid">
+                    <div id="image-caption">Arya Sah</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                  <p  style="font-family:'Lora', cursive; ">I had a very memorable trip to Udaipur. It was awesome and services provided by <span style="font-family: 'Cookie', cursive; font-size:2rem">Incredible India </span> was excellent  </p> <img src="https://p7.hiclipart.com/preview/922/81/315/stock-photography-computer-icons-user-3d-character-icon-vector-material.jpg" class="img-fluid">
+                    <div id="image-caption">Ashutosh Rathore</div>
+                </div>
+            </div>
+        </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fa fa-arrow-left icon'></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fa fa-arrow-right icon'></i> </a>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+{% endblock body %}

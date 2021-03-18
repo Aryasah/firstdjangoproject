@@ -1,15 +1,18 @@
 from django.contrib import admin
 from django.urls import path
-from .views import *
-
+from accounts import views
+from django.conf.urls import url,include
 urlpatterns = [
-    path('' ,  home  , name="home"),
-    path('register' , register_attempt , name="register_attempt"),
-    path('accounts/login/' , login_attempt , name="login_attempt"),
-    path('token' , token_send , name="token_send"),
-    path('success' , success , name='success'),
-    path('verify/<auth_token>' , verify , name="verify"),
-    path('error' , error_page , name="error")
+    path("", views.index, name='home'),
+    path("about", views.about, name='about'),
+    path("contact", views.contact, name='contact'),
+    path("logout",views.logout,name='logout'),
+    path('register' , views.register_attempt , name="register_attempt"),
+    path('accounts/login/' , views.login_attempt , name="login_attempt"),
+    path('token' , views.token_send , name="token_send"),
+    path('success' , views.success , name='success'),
+    path('verify/<auth_token>' , views.verify , name="verify"),
+    path('error' , views.error_page , name="error")
 
     
    

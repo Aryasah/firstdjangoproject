@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  
+}
+.carousel-item, .img-fluid {
+width:100%;
+}
+@media(max-width:767px)
+{
+  .jumbotron{
+    font-size: 2rem;
+  }
+}
+
+

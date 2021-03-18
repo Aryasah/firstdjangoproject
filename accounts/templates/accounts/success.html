@@ -1,0 +1,23 @@
+{% extends "accounts/base.html"%}
+{% load static %}
+    {% block content %}
+
+
+    
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center text-muted"><strong>Hurray!!!<br> Your mail is verified</strong> </h3>
+            <div class="card-text text-center">
+            <img class="card-img" alt="success" src="{% static 'img/card/success.gif' %}">
+                <b>**Please login**</b>
+            </div>
+            <div class="text-center">
+            <a class="btn btn-primary" style="font-size:1.5rem;color:white" href="{% url 'login_attempt' %}" ><i class="fa fa-sign-in">  Log-In</i></a>
+         </div>
+        </div>
+    </div>
+    </div>
+
+
+    {% endblock %}
